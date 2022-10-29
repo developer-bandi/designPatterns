@@ -19,7 +19,7 @@ const main = () => {
   const work1 = new longTimeWork();
   setTimeout(() => {
     work1.setText("test1");
-    const work2 = Object.create(work1);
+    const work2 = Object.assign(Object.create(longTimeWork.prototype), work1);
     work2.setText("test2");
   }, 4000);
 };
